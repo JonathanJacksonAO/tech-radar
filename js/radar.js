@@ -16,14 +16,14 @@ function init(h, w) {
         })
         .lineWidth(3) // width od the stroke
         .strokeStyle("#ccc")
-        .fillStyle("rgba(194, 205, 35,.2)") // fills the entire circle
+//        .fillStyle("rgba(194, 205, 35,.2)") // fills the entire circle
         .anchor("top")
         .add(pv.Label)
         .text(function (d) {
             return d.name;
         })
         .font("30px arial") // css specific font
-        .textMargin(10) // margin to pad away from the arc line
+        .textMargin(15) // margin to pad away from the arc line
         .textBaseline("top") // label position in relation to arc line
         .textStyle("#bbb"); // label colour
 
@@ -74,11 +74,21 @@ function init(h, w) {
                 return ( d.url !== undefined ? "pointer" : "auto" );
             })
             .event("click", function (d) {
-                if (d.url !== undefined) {
-                    alert(d);
-//                    self.location = d.url
-                }
+
+                var scope = angular.element(document.querySelector('#body')).scope();
+                scope.$apply(function(){
+//                    scope.name = d.name;
+//                    scope.blimpDescription = d.description;
+//                    scope.checked = false;
+                    scope.selectBlimp(d);
+                })
             })
+//            .event("click", function (d) {
+//                if (d.url !== undefined) {
+//                    alert(d);
+////                    self.location = d.url
+//                }
+//            })
             .angle(Math.PI)  // 180 degrees in radians !
             .strokeStyle(radar_data[i].color)
             .fillStyle(radar_data[i].color)

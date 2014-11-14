@@ -1,8 +1,8 @@
 //This is the title for your window tab, and your Radar
 document.title = "Technology Radar";
 
-var h = 700;
-var w = 700;
+var h = 550;
+var w = 550;
 
 var yearsToDisplay = 4;
 
@@ -68,51 +68,62 @@ var blipSize = 300;
 
 
 var radar_data = [
-    { "quadrant": "Techniques Mike",
+    { "quadrant": "Techniques",
+        "description":"Some interesting techniques being looked at by the CTO Team.",
         "left" : 45,
         "top" : 18,
 //        "color" : "#8FA227",
-        "color" : "rgba(30, 120, 180, .4)", //colour for blimps for this specific quadrant
+        "color" : "#FF5722", //colour for blimps for this specific quadrant
         "items" : [
-            {"name":"Database based Integration Mike", "pc":{"r":350,"t":135},"movement":"t", "blipSize":blipSize},
-            {"name":"Scrum certification", "pc":{"r":310,"t":135},"movement":"c", "blipSize":blipSize, "url":"http://www.google.com"},
-            {"name":"Incremental data warehousing", "pc":{"r":250,"t":165},"movement":"c", "blipSize":blipSize},
-            {"name":"DevOps", "pc":{"r":250,"t":110},"movement":"c", "blipSize":blipSize}
+            {
+                "name":"Microservices",
+                "description":"The term **Microservice Architecture** has sprung up over the last few years to describe a particular way of designing software applications as suites of independently deployable services. While there is no precise definition of this architectural style, there are certain common characteristics around organization around business capability, automated deployment, intelligence in the endpoints, and decentralized control of languages and data.",
+                "pc":{"r":230,"t":135},"movement":"t", "blipSize":blipSize},
+            {
+                "name":"Scrum certification",
+                "description": "If you want to be a scrum master, then you will need to be certified!!",
+                "pc":{"r":110,"t":135},"movement":"c", "blipSize":blipSize},
+            {"name":"Test", "pc":{"r":160,"t":140},"movement":"c", "blipSize":blipSize},
+            {"name":"Incremental data warehousing", "pc":{"r":180,"t":165},"movement":"c", "blipSize":blipSize},
+            {"name":"DevOps", "pc":{"r":200,"t":110},"movement":"c", "blipSize":blipSize}
 
         ]
     },
     { "quadrant": "Tools",
+        "description":"Some interesting _tools_ being looked at by the CTO Team.",
         "left": w-200+30,
         "top" : 18,
-        "color" : "#587486",
+        "color" : "#3F51B5", // indigo
         "items" : [ 
-            {"name":"ESB", "pc":{"r":310,"t":20},"movement":"t", "blipSize":blipSize},
-            {"name":"Intentional Programming", "pc":{"r":310,"t":10},"movement":"c", "blipSize":blipSize},
-            {"name":"Cross mobile platforms", "pc":{"r":280,"t":85},"movement":"c", "blipSize":blipSize},
-            {"name":"Github", "pc":{"r":280,"t":70},"movement":"c", "blipSize":blipSize},
-            {"name":"Restfulie", "pc":{"r":280,"t":50},"movement":"c", "blipSize":blipSize}
+            {"name":"ESB", "pc":{"r":80,"t":20},"movement":"t", "blipSize":blipSize},
+            {"name":"Intentional Programming", "pc":{"r":210,"t":10},"movement":"c", "blipSize":blipSize},
+            {"name":"Cross mobile platforms", "pc":{"r":140,"t":70},"movement":"c", "blipSize":blipSize},
+            {"name":"Github", "pc":{"r":210,"t":70},"movement":"c", "blipSize":blipSize},
+            {"name":"Restfulie", "pc":{"r":210,"t":50},"movement":"c", "blipSize":blipSize}
         ]
     },
     { "quadrant": "Platforms",
+        "description":"Here we cover off cloud, web and application platforms.",
         "left" :45,
          "top" : (h/2 + 18),
-        "color" : "#DC6F1D",
+        "color" : "#673AB7", // deep purple
         "items" : [
-            {"name":"Rich internet applications", "pc":{"r":260,"t":200},"movement":"c", "blipSize":blipSize},
-            {"name":"GWT", "pc":{"r":260,"t":210},"movement":"c", "blipSize":blipSize},
-            {"name":"IE8", "pc":{"r":260,"t":220},"movement":"c", "blipSize":blipSize},
+            {"name":"Rich internet applications", "pc":{"r":120,"t":200},"movement":"c", "blipSize":blipSize},
+            {"name":"GWT", "pc":{"r":220,"t":210},"movement":"c", "blipSize":blipSize},
+            {"name":"IE8", "pc":{"r":150,"t":220},"movement":"c", "blipSize":blipSize},
             {"name":"WS-* beyond basic profile", "pc":{"r":260,"t":230},"movement":"c", "blipSize":blipSize},
-            {"name":"Azure", "pc":{"r":260,"t":240},"movement":"c", "blipSize":blipSize}
+            {"name":"Azure", "pc":{"r":50,"t":240},"movement":"c", "blipSize":blipSize}
         ]
     },
     { "quadrant": "Languages",
-        "color" : "#B70062",
+        "description":"Some of the languages we are looking at around web and mobile development.",
+        "color" : "#8BC34A", // light green
         "left"  : (w-200+30),
         "top" :   (h/2 + 18),
         "items" : [ 
-            {"name":"Java language end of life", "pc":{"r":290,"t":355},"movement":"c", "blipSize":blipSize},
-            {"name":"F#", "pc":{"r":270,"t":330},"movement":"c", "blipSize":blipSize},
-            {"name":"Scala", "pc":{"r":290,"t":320},"movement":"c", "blipSize":blipSize}
+            {"name":"Java language end of life", "pc":{"r":60,"t":340},"movement":"c", "blipSize":blipSize},
+            {"name":"F#", "pc":{"r":220,"t":340},"movement":"c", "blipSize":blipSize},
+            {"name":"Scala", "pc":{"r":220,"t":320},"movement":"c", "blipSize":blipSize}
         ]
     }
 ];

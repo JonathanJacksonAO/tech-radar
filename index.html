@@ -1,25 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head lang="en">
     <meta charset="UTF-8">
 
     <title>Technology Radar</title>
 
-    <script src="lib/jquery/jquery.min.js"></script>
 
-    <script src="lib/protovis-3.2/protovis-d3.2.js"></script>
-    <script src="js/utils.js"></script>
+    <style>
+        /*#radar{*/
+        /*height: 600px;*/
+        /*width: 600px;*/
+        /*}*/
 
-    <!-- radar data -->
-    <script src="js/radars/radarData.js"></script>
+        /*#radar{*/
+        /*transform:scale(0.8); -webkit-transform:scale(0.8); -moz-transform:scale(0.8); -ms-transform:scale(0.8); -o-transform:scale(0.8);*/
+        /*}*/
+        /*#radar{*/
+        /*width:100%;*/
+        /*height:100%;*/
+        /*}*/
+        /*svg{*/
+        /*width:100%;*/
+        /*height:100%;*/
+        /*}*/
+        /*svg{*/
+        /*transform:scale(0.8); -webkit-transform:scale(0.8); -moz-transform:scale(0.8); -ms-transform:scale(0.8); -o-transform:scale(0.8);*/
+        /*}*/
+    </style>
 
-    <!-- the radar -->
-    <script src="js/radar.js"></script>
-
+    <!-- UI -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap-material-design/dist/css/material-wfont.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
 
 </head>
-<body onload="init(h,w);">
-<h1 id="title" style="text-align: center;"></h1>
-<!--<div id="radar"></div>-->
+<body id="body" onload="init(h,w);" ng-controller="AppCtrl">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h1>Technology Radar</h1>
+            <p class="lead">Strapline to go here</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-7">
+            <div class="well" style="height: 600px">
+                <div id="radar"></div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5">
+            <div class="card" style="height: 600px">
+                <div class="item-header" style="background-color: #03A9F4"><h3>{{name}}</h3></div>
+
+
+
+                <div class="card-body list-group" ng-if="checked == true">
+
+                    <div class="list-group-item" ng-repeat="item in data">
+                        <div class="row-action-primary">
+                            <!--<i class="mdi-file-folder "></i>-->
+                            <i class="mdi-av-album" style="background-color: {{item.color}}"></i>
+                        </div>
+                        <div class="row-content">
+                            <div class="least-content">15m</div>
+                            <h4 class="list-group-item-heading">{{item.quadrant}}</h4>
+
+                            <markup class="list-group-item-text" markdown="{{item.description}}"></markup>
+                        </div>
+                        <div class="list-group-separator"></div>
+                    </div>
+
+                </div>
+                <div ng-if="checked != true">
+                    <div class="card-body">
+                        <markup markdown="{{description}}"></markup>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="lib/jquery/jquery.min.js"></script>
+
+<!-- angular js -->
+<script src="bower_components/angular/angular.js"></script>
+
+<script src="bower_components/lodash/dist/lodash.min.js"></script>
+
+<script src="lib/protovis-3.2/protovis-d3.2.js"></script>
+<script src="lib/marked/marked.min.js"></script>
+<script src="js/utils.js"></script>
+
+<!-- radar data -->
+<script src="js/radars/radarData.js"></script>
+
+<!-- the radar -->
+<script src="js/radar.js"></script>
+
+<!-- vanilla bootstrap -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- bootstrap material design -->
+<script src="bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
+<script src="bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
+
+<script src="js/app.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $.material.init();
+    });
+</script>
+
 </body>
 </html>
