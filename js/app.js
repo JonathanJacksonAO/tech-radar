@@ -20,6 +20,7 @@ angular.module('app', [])
                 _.assign(itemToAdd, {id:itemCounter});
                 _.assign(itemToAdd, {color:quadrant.color});
                 _.assign(itemToAdd, {quadrant:quadrant.quadrant});
+                _.assign(itemToAdd, {quadrantGuid:quadrant.guid});
 
                 flattenedData.push(item);
             });
@@ -61,7 +62,7 @@ angular.module('app', [])
 
             $scope.legendItemsTitle = "Legend - " + quadrant.quadrant;
 
-            $scope.itemFilter = quadrant.quadrant;
+            $scope.itemFilter = quadrant.guid;
 
         };
 

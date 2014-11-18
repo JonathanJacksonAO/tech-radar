@@ -74,6 +74,7 @@ var blipSize = 200;
 
 var radar_data = [
     { "quadrant": "Techniques",
+        "guid":"aaa-aaa-aaa",
         "description": "Some interesting techniques being looked at by the CTO Team.",
         "left": 45,
         "top": 18,
@@ -123,6 +124,7 @@ var radar_data = [
         ]
     },
     { "quadrant": "Tools",
+        "guid":"bbb-bbb-bbb",
         "description": "Some interesting _tools_ being looked at by the CTO Team.",
         "left": w - 200 + 30,
         "top": 18,
@@ -166,6 +168,7 @@ var radar_data = [
         ]
     },
     { "quadrant": "Platforms",
+        "guid":"ccc-ccc-ccc",
         "description": "Here we cover off cloud, web and application platforms.",
         "left": 45,
         "top": (h / 2 + 18),
@@ -214,6 +217,7 @@ var radar_data = [
         ]
     },
     { "quadrant": "Languages",
+        "guid":"ddd-dddd-ddd",
         "description": "Some of the languages we are looking at around web and mobile development.",
         "color": "#8BC34A", // light green
         "left": (w - 200 + 30),
