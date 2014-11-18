@@ -1,3 +1,35 @@
+body{
+  padding-top: 16px;
+  padding-left: 8px;
+//  background-color: #000000;
+}
+
+.legend-list-group{
+  margin-top: 10px;
+}
+
+.radar-container{
+  text-align: center;
+}
+
+.radar-header{
+  position: relative;
+  top:0px;
+  left:0px;
+  right: 0px;
+  height: 5px;
+
+  background-color: #03A9F4;
+
+margin-bottom: 20px;
+
+}
+
+.container{
+  background-color: red;
+
+}
+
 .item-header{
   position: relative;
   top:0px;
@@ -10,7 +42,30 @@
   padding-left: 34px;
 //  padding-right: -8px;
 
+  background-color: #03A9F4;
 
-  background-color: red;
+  color: white;
+}
+
+.item-footer{
+  position: absolute;
+  bottom:0px;
+  left:0px;
+  right: 0px;
+//  height: 40px;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-top: solid 1px #eeeeee;
+
+//  text-align: right;
+
+//  background-color: #03A9F4
+}
+
+a.btn-material-lightblue:not(.btn-link):not(.btn-flat):hover{
+//  background-color: red;
   color: white;
 }

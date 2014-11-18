@@ -33,66 +33,96 @@
     <link href="bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
     <link href="bower_components/bootstrap-material-design/dist/css/material-wfont.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
+    <link href="lib/tipsy/tipsy.css" rel="stylesheet">
+
 
 </head>
 <body id="body" onload="init(h,w);" ng-controller="AppCtrl">
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-            <h1>Technology Radar</h1>
-            <p class="lead">Strapline to go here</p>
-        </div>
-    </div>
-    <div class="row">
+        <!-- THE RADAR -->
         <div class="col-lg-7 col-md-7 col-sm-7">
-            <div class="well" style="height: 600px">
+            <div class="card radar-container" style="height: 700px">
+                <div class="radar-header" style=""></div>
                 <div id="radar"></div>
             </div>
         </div>
-        <div class="col-lg-5 col-md-5 col-sm-5">
-            <div class="card" style="height: 600px">
-                <div class="item-header" style="background-color: #03A9F4"><h3>{{name}}</h3></div>
 
-
-
-                <div class="card-body list-group" ng-if="checked == true">
-
-                    <div class="list-group-item" ng-repeat="item in data">
+        <!-- THE LEGEND & BLIMP DESCRIPTIONS -->
+        <div class="col-lg-4 col-md-4 col-sm-4" ng-if="showLegend == true">
+            <!-- THE QUADRANT GROUPS -->
+            <div class="card" style="height: 550px" ng-if="showLegendItems != true">
+                <div class="item-header" style=""><h3>Legend - Categories</h3></div>
+                <div class="card-body list-group">
+                    <div class="legend-list-group list-group-item" ng-repeat="item in data">
                         <div class="row-action-primary">
                             <!--<i class="mdi-file-folder "></i>-->
-                            <i class="mdi-av-album" style="background-color: {{item.color}}"></i>
+                            <i class="mdi-av-album" style="background-color: {{item.color}}" ng-click="displayLegendItems(item)"></i>
                         </div>
                         <div class="row-content">
-                            <div class="least-content">15m</div>
+                            <div class="least-content" ng-click="displayLegendItems(item)">
+                                <span class="badge">{{item.items.length}}</span>
+                            </div>
                             <h4 class="list-group-item-heading">{{item.quadrant}}</h4>
-
                             <markup class="list-group-item-text" markdown="{{item.description}}"></markup>
                         </div>
                         <div class="list-group-separator"></div>
                     </div>
-
                 </div>
-                <div ng-if="checked != true">
+            </div>
+
+            <!-- THE QUADRANT ITEMS -->
+            <div class="card" style="height: 550px" ng-if="showLegendItems == true">
+                <div class="item-header" style="background-color: {{quadrantData.color}};"><h3>{{quadrantData.quadrant}}</h3></div>
+
+                <div class="card-body list-group">
+                    <!--<p><input type="text" ng-model="test"></p>-->
+                    <div style="padding-left: 18px;" ng-repeat="dataItem in flattenedData | filter:itemFilter">
+                        <span ng-click="selectBlimp(dataItem)" class="badge" style="width:40px; margin-right: 10px; margin-bottom: 3px">
+                            {{dataItem.id}}
+                        </span>
+                        {{dataItem.name}}
+                    </div>
+                </div>
+                <div class="item-footer">
+                    <a class="btn btn-material-lightblue btn-raised" ng-click="backToCategories()">Categories</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-4" ng-if="showLegend != true">
+            <div class="card" style="height: 550px">
+                <div class="item-header" style="background-color: {{blimpData.color}};"><h3>{{blimpData.name}}</h3></div>
+
+                <div>
                     <div class="card-body">
-                        <markup markdown="{{description}}"></markup>
+                        <markup markdown="{{blimpData.description}}"></markup>
                     </div>
 
 
                 </div>
+
+                <div class="item-footer">
+                    <a class="btn btn-material-lightblue btn-raised" ng-click="backToLegend()">Legend</a>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
 
+<script src="lib/protovis-3.2/protovis-d3.2.js"></script>
 
 <script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/tipsy/jquery.tipsy.js"></script>
+<script src="js/tipsy.js"></script>
 
 <!-- angular js -->
 <script src="bower_components/angular/angular.js"></script>
 
 <script src="bower_components/lodash/dist/lodash.min.js"></script>
 
-<script src="lib/protovis-3.2/protovis-d3.2.js"></script>
 <script src="lib/marked/marked.min.js"></script>
 <script src="js/utils.js"></script>
 

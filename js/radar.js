@@ -14,18 +14,18 @@ function init(h, w) {
         .radius(function (d) {
             return d.r;
         })
-        .lineWidth(3) // width od the stroke
-        .strokeStyle("#ccc")
+        .lineWidth(1) // width od the stroke
+        .strokeStyle("#000")
 //        .fillStyle("rgba(194, 205, 35,.2)") // fills the entire circle
         .anchor("top")
         .add(pv.Label)
         .text(function (d) {
             return d.name;
         })
-        .font("30px arial") // css specific font
+        .font("15px arial") // css specific font
         .textMargin(15) // margin to pad away from the arc line
         .textBaseline("top") // label position in relation to arc line
-        .textStyle("#bbb"); // label colour
+        .textStyle("#F44336"); // label colour
 
 //quadrant lines -- vertical
     radar.add(pv.Line)
@@ -35,7 +35,7 @@ function init(h, w) {
         .bottom(function (d) {
             return d;
         })
-        .strokeStyle("#bbb");
+        .strokeStyle("#ccc");
 
 //quadrant lines -- horizontal 
     radar.add(pv.Line)
@@ -45,11 +45,23 @@ function init(h, w) {
         .left(function (d) {
             return d;
         })
-        .strokeStyle("#bbb");
+        .strokeStyle("#ccc");
 
 
 // blips
     var total_index = 1;
+    var counter = 0;
+
+    _.forEach(radar_data, function(quadrant){
+
+        _.forEach(quadrant.items, function(item){
+            counter++;
+            _.assign(item, {id:counter});
+            _.assign(item, {color:quadrant.color});
+            _.assign(item, {quadrant:quadrant.quadrant});
+        })
+    });
+
     for (var i = 0; i < radar_data.length; i++) {
         radar.add(pv.Dot)
             .def("active", false)
@@ -71,24 +83,18 @@ function init(h, w) {
                 return d.name;
             })
             .cursor(function (d) {
-                return ( d.url !== undefined ? "pointer" : "auto" );
+//                return ( d.url !== undefined ? "pointer" : "auto" );
+                return "auto";
             })
             .event("click", function (d) {
 
+                // Integration with AngularJS
                 var scope = angular.element(document.querySelector('#body')).scope();
-                scope.$apply(function(){
-//                    scope.name = d.name;
-//                    scope.blimpDescription = d.description;
-//                    scope.checked = false;
+                scope.$apply(function () {
                     scope.selectBlimp(d);
                 })
             })
-//            .event("click", function (d) {
-//                if (d.url !== undefined) {
-//                    alert(d);
-////                    self.location = d.url
-//                }
-//            })
+//            .event("mouseover",pv.Behavior.tipsy({"gravity": "sw",fade:true}))
             .angle(Math.PI)  // 180 degrees in radians !
             .strokeStyle(radar_data[i].color)
             .fillStyle(radar_data[i].color)
@@ -98,6 +104,7 @@ function init(h, w) {
             .anchor("center")
             .add(pv.Label)
             .text(function (d) {
+//                return "<a>TEST</a>"
                 return total_index++;
             })
             .textBaseline("middle")

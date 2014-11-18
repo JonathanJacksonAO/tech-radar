@@ -3,33 +3,85 @@
  */
 
 angular.module('app', [])
-.controller('AppCtrl', ['$scope', function($scope){
+.controller('AppCtrl', ['$scope', '$timeout', function($scope,$timeout){
 
         $scope.name = "Legend";
 
+        // flatten the radar data
+        var flattenedData = [];
+
+        var itemCounter = 0;
+
+        _.forEach(radar_data, function(quadrant){
+
+            _.forEach(quadrant.items, function(item){
+                itemCounter++;
+                var itemToAdd = item;
+                _.assign(itemToAdd, {id:itemCounter});
+                _.assign(itemToAdd, {color:quadrant.color});
+                _.assign(itemToAdd, {quadrant:quadrant.quadrant});
+
+                flattenedData.push(item);
+            });
+
+        });
+
+        $scope.flattenedData = flattenedData;
+
         $scope.data = radar_data;
 
-        $scope.checked = true;
+        $scope.showLegend = true;
+        $scope.showLegendItems = false;
 
 
 
         $scope.selectBlimp = function(data){
-//            alert("blimp selected");
 
-            $scope.checked = false;
+            $scope.showLegend = false;
 
-            $scope.name = data.name;
-            $scope.description = data.description;
+            $scope.blimpData = data;
+
+            $scope.targetYear = data.targetYear;
 
         };
 
-//        $scope.msg = "123";
-        function selectBlimp2(data){
-            alert("blimp 2 selected");
-            $scope.$apply(function() {
+        $scope.backToLegend = function(){
 
-            });
+            $scope.showLegend = true;
+
+            $scope.name = "Legend";
+
+        };
+
+        $scope.displayLegendItems = function(quadrant){
+
+            $scope.showLegendItems = true;
+
+            $scope.quadrantData = quadrant;
+
+            $scope.legendItemsTitle = "Legend - " + quadrant.quadrant;
+
+            $scope.itemFilter = quadrant.quadrant;
+
+        };
+
+        $scope.backToCategories = function () {
+
+//            $timeout(function () {
+                $scope.showLegendItems = false;
+
+//            }, 500);
+
+
         }
+
+//        $scope.msg = "123";
+//        function selectBlimp2(data){
+//            alert("blimp 2 selected");
+//            $scope.$apply(function() {
+//
+//            });
+//        }
 
         $scope.$watch("name", function(newVal, oldVal){
 //            alert('scope.name changed')
