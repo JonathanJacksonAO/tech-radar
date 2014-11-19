@@ -83,6 +83,7 @@ var radar_data = [
         "items": [
             {
                 "name": "Microservices",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2018",
                 "description": "The term **Microservice Architecture** has sprung up over the last few years to describe a particular way of designing software applications as suites of independently deployable services. While there is no precise definition of this architectural style, there are certain common characteristics around organization around business capability, automated deployment, intelligence in the endpoints, and decentralized control of languages and data.",
                 "pc": {"r": 270, "t": 135},
@@ -91,6 +92,7 @@ var radar_data = [
             },
             {
                 "name": "Scrum Certification",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2020",
                 "description": "**Certifications in Scrum**, the leading framework for Agile software development.\n\nScrum training and certification fulfill the vision of the Agile manifesto by fostering greater collaboration, productivity, and success among team members. This global movement transforms organizations and takes them to higher levels of performance.",
                 "pc": {"r": 110, "t": 135},
@@ -98,6 +100,7 @@ var radar_data = [
                 "blipSize": blipSize},
             {
                 "name": "Test",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2015",
                 "description":"Description to go **here**.",
                 "pc": {"r": 160, "t": 140},
@@ -106,6 +109,7 @@ var radar_data = [
             },
             {
                 "name": "Incremental data warehousing",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2015",
                 "description":"Description to go **here**.",
                 "pc": {"r": 180, "t": 165},
@@ -114,6 +118,7 @@ var radar_data = [
             },
             {
                 "name": "DevOps",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2015",
                 "description":"**DevOps** (a portmanteau of **development** and **operations**) is a software development method that stresses communication, collaboration and integration between software developers and Information Technology(IT) professionals.  DevOps is a response to the interdependence of software development and IT operations. It aims to help an organization rapidly produce software products and services.\n\nFor more information, [click here](http://en.wikipedia.org/wiki/DevOps).",
                 "pc": {"r": 200, "t": 110},
@@ -132,6 +137,7 @@ var radar_data = [
         "items": [
             {
                 "name": "ESB",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2016",
                 "description":"Description goes **here**.",
                 "pc": {"r": 80, "t": 20},
@@ -139,6 +145,7 @@ var radar_data = [
                 "blipSize": blipSize},
             {
                 "name": "Intentional Programming",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2016",
                 "description":"Description goes **here**.",
                 "pc": {"r": 210, "t": 10},
@@ -146,6 +153,7 @@ var radar_data = [
                 "blipSize": blipSize},
             {
                 "name": "Cross mobile platforms",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2016",
                 "description":"Description goes **here**.",
                 "pc": {"r": 140, "t": 70},
@@ -153,6 +161,7 @@ var radar_data = [
                 "blipSize": blipSize},
             {
                 "name": "Github",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2019",
                 "description": "GitHub is a Git repository web-based hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features. Unlike Git, which is strictly a command-line tool, GitHub provides a web-based graphical interface and desktop as well as mobile integration. It also provides access control and several collaboration features such as wikis, task management, and bug tracking and feature requests for every project.\n\nGitHub offers both paid plans for private repositories and free accounts, which are usually used to host open-source software projects. As of 2014, GitHub reports having over 3.4 million users,[4] making it the largest code host in the world",
                 "pc": {"r": 210, "t": 70},
@@ -160,6 +169,7 @@ var radar_data = [
                 "blipSize": blipSize},
             {
                 "name": "Restfulie",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2016",
                 "description":"Description goes **here**.",
                 "pc": {"r": 210, "t": 50},
@@ -176,6 +186,7 @@ var radar_data = [
         "items": [
             {
                 "name": "Rich internet applications",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2017",
                 "description":"Description goes **here**.",
                 "pc": {"r": 120, "t": 200},
@@ -184,6 +195,7 @@ var radar_data = [
             },
             {
                 "name": "GWT",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2017",
                 "description":"Description goes **here**.",
                 "pc": {"r": 220, "t": 210},
@@ -192,6 +204,7 @@ var radar_data = [
             },
             {
                 "name": "IE8",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2017",
                 "description":"Description goes **here**.",
                 "pc": {"r": 170, "t": 240},
@@ -200,6 +213,7 @@ var radar_data = [
             },
             {
                 "name": "WS-* beyond basic profile",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2017",
                 "description":"Description goes **here**.",
                 "pc": {"r": 260, "t": 230},
@@ -208,6 +222,7 @@ var radar_data = [
             },
             {
                 "name": "Azure",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2017",
                 "description":"Description goes **here**.",
                 "pc": {"r": 20, "t": 240},
@@ -225,6 +240,7 @@ var radar_data = [
         "items": [
             {
                 "name": "Java language end of life",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2018",
                 "description":"Description goes **here**.",
                 "pc": {"r": 60, "t": 340},
@@ -233,6 +249,7 @@ var radar_data = [
             },
             {
                 "name": "F#",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2018",
                 "description":"Description goes **here**.",
                 "pc": {"r": 270, "t": 340},
@@ -241,6 +258,7 @@ var radar_data = [
             },
             {
                 "name": "Scala",
+                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear":"2018",
                 "description":"Description goes **here**.",
                 "pc": {"r": 220, "t": 320},

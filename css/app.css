@@ -2,6 +2,10 @@ body {
   padding-top: 16px;
   padding-left: 8px; }
 
+h2 {
+  margin-top: 0px;
+  margin-bottom: 16px; }
+
 .legend-list-group {
   margin-top: 10px; }
 
