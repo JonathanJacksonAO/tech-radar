@@ -15,8 +15,14 @@ function init(h, w) {
             return d.r;
         })
         .lineWidth(1) // width od the stroke
-        .strokeStyle("#000")
-//        .fillStyle("rgba(194, 205, 35,.2)") // fills the entire circle
+        .strokeStyle(function(d){
+            if(d.name === "")
+            {return "";}
+            else
+            {return "#000"}
+        })
+//        .strokeStyle("#000")
+        .fillStyle("rgba(194, 205, 35,.1)") // fills the entire circle
         .anchor("top")
         .add(pv.Label)
         .text(function (d) {
@@ -25,7 +31,8 @@ function init(h, w) {
         .font("15px arial") // css specific font
         .textMargin(15) // margin to pad away from the arc line
         .textBaseline("top") // label position in relation to arc line
-        .textStyle("#F44336"); // label colour
+        .textStyle("rgba(0,0,0,1.0)"); // label colour
+//        .textStyle("#F44336"); // label colour
 
 //quadrant lines -- vertical
     radar.add(pv.Line)

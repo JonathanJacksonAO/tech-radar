@@ -4,11 +4,20 @@ document.title = "Technology Radar";
 var h = 650;
 var w = 650;
 
-var yearsToDisplay = 6;
+var yearsToDisplay = 7;
 
 var baseYearSize = (h / 2) / yearsToDisplay;
 
 baseYearSize = Math.floor(baseYearSize);
+
+var percentageAdjustment = 0.80;
+
+var ring6 = baseYearSize * 6;
+var ring5 = ring6 - (baseYearSize * percentageAdjustment);
+var ring4 = ring5 - (baseYearSize * percentageAdjustment);
+var ring3 = ring4 - (baseYearSize * percentageAdjustment);
+var ring2 = ring3 - (baseYearSize * percentageAdjustment);
+var ring1 = ring2 - (baseYearSize * percentageAdjustment);
 
 //This is the concentic circles that want on your radar
 var radar_arcs = [
@@ -22,17 +31,31 @@ var radar_arcs = [
 //    ,{'r':240,'name':'2017'}
 //    ,{'r':320,'name':'2018'}
 
-    {'r': baseYearSize, 'name': '2015'}
+//    {'r': ring1, 'name': '2015'}
+//    ,
+//    {'r': ring2, 'name': '2016'}
+//    ,
+//    {'r': ring3, 'name': '2017'}
+//    ,
+//    {'r': ring4, 'name': '2018'}
+//    ,
+//    {'r': ring5, 'name': '2019'}
+//    ,
+//    {'r': ring6, 'name': '2020'}
+
+    {'r': baseYearSize, 'name': ''}
     ,
-    {'r': baseYearSize * 2, 'name': '2016'}
+    {'r': baseYearSize * 2, 'name': '2015'}
     ,
-    {'r': baseYearSize * 3, 'name': '2017'}
+    {'r': baseYearSize * 3, 'name': '2016'}
     ,
-    {'r': baseYearSize * 4, 'name': '2018'}
+    {'r': baseYearSize * 4, 'name': '2017'}
     ,
-    {'r': baseYearSize * 5, 'name': '2019'}
+    {'r': baseYearSize * 5, 'name': '2018'}
     ,
-    {'r': baseYearSize * 6, 'name': '2020'}
+    {'r': baseYearSize * 6, 'name': '2019'}
+    ,
+    {'r': baseYearSize * 7, 'name': '2020'}
 ];
 
 var blipSize = 120;
@@ -71,6 +94,12 @@ var blipSize = 120;
 // - Hold: things that are getting attention in the industry, but not ready for use; sometimes they are not mature enough yet, sometimes they are irredeemably flawed
 //      Note: there's no "avoid" ring, but throw things in the hold ring that people shouldn't use.
 
+var radialCoordinateInner2015 = 45;
+var radialCoordinateOuter2015 = 70;
+var radialCoordinate2016 = 120;
+var radialCoordinate2017 = 160;
+var radialCoordinate2018 = 210;
+var radialCoordinate2020 = 300;
 
 var radar_data = [
     { "quadrant": "Services/Applications",
@@ -86,7 +115,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2020",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 300, "t": 135},
+                "pc": {"r": radialCoordinate2020, "t": 135},
                 "movement": "c",
                 "blipSize": blipSize
             },
@@ -95,7 +124,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2018",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 190, "t": 135},
+                "pc": {"r": radialCoordinate2018, "t": 135},
                 "movement": "c",
                 "blipSize": blipSize
             }
@@ -105,7 +134,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2017",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 140, "t": 120},
+                "pc": {"r": radialCoordinate2017, "t": 120},
                 "movement": "c",
                 "blipSize": blipSize
             }
@@ -115,7 +144,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2017",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 140, "t": 140},
+                "pc": {"r": radialCoordinate2017, "t": 140},
                 "movement": "c",
                 "blipSize": blipSize
             }
@@ -125,7 +154,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2017",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 140, "t": 160},
+                "pc": {"r": radialCoordinate2017, "t": 160},
                 "movement": "c",
                 "blipSize": blipSize
             }
@@ -135,7 +164,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 80, "t": 110},
+                "pc": {"r": radialCoordinate2016, "t": 110},
                 "movement": "c",
                 "blipSize": blipSize
             }
@@ -145,7 +174,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 90, "t": 130},
+                "pc": {"r": radialCoordinate2016, "t": 130},
                 "movement": "t",
                 "blipSize": blipSize
             }
@@ -155,7 +184,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 80, "t": 150},
+                "pc": {"r": radialCoordinate2016, "t": 150},
                 "movement": "c",
                 "blipSize": blipSize
             }
@@ -165,7 +194,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 90, "t": 170},
+                "pc": {"r": radialCoordinate2016, "t": 170},
                 "movement": "c",
                 "blipSize": blipSize
             }
@@ -183,7 +212,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2018",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 190, "t": 20},
+                "pc": {"r": radialCoordinate2018, "t": 20},
                 "movement": "t",
                 "blipSize": blipSize},
             {
@@ -191,7 +220,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 80, "t": 20},
+                "pc": {"r": radialCoordinate2016, "t": 20},
                 "movement": "t",
                 "blipSize": blipSize},
             {
@@ -199,7 +228,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 80, "t": 40},
+                "pc": {"r": radialCoordinate2016, "t": 40},
                 "movement": "c",
                 "blipSize": blipSize},
             {
@@ -207,7 +236,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 50, "t": 50},
+                "pc": {"r": radialCoordinateOuter2015, "t": 60},
                 "movement": "c",
                 "blipSize": blipSize},
             {
@@ -215,7 +244,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 50, "t": 40},
+                "pc": {"r": radialCoordinateOuter2015, "t": 20},
                 "movement": "c",
                 "blipSize": blipSize},
             {
@@ -223,7 +252,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 30, "t": 80},
+                "pc": {"r": radialCoordinateInner2015, "t": 70},
                 "movement": "c",
                 "blipSize": blipSize},
             {
@@ -231,7 +260,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 30, "t": 40},
+                "pc": {"r": radialCoordinateInner2015, "t": 40},
                 "movement": "c",
                 "blipSize": blipSize},
             {
@@ -239,7 +268,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 30, "t": 10},
+                "pc": {"r": radialCoordinateInner2015, "t": 10},
                 "movement": "c",
                 "blipSize": blipSize},
             {
@@ -247,7 +276,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 10, "t": 10},
+                "pc": {"r": radialCoordinateInner2015 - 30, "t": 50},
                 "movement": "c",
                 "blipSize": blipSize},
 
@@ -266,7 +295,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2020",
                 "description": "Description goes **here**.",
-                "pc": {"r": 300, "t": 200},
+                "pc": {"r": radialCoordinate2020, "t": 200},
                 "movement": "c",
                 "blipSize": blipSize
             },
@@ -275,7 +304,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2020",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 300, "t": 250},
+                "pc": {"r": radialCoordinate2020, "t": 250},
                 "movement": "t",
                 "blipSize": blipSize
             },
@@ -284,7 +313,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 80, "t": 210},
+                "pc": {"r": radialCoordinate2016, "t": 210},
                 "movement": "c",
                 "blipSize": blipSize
             },
@@ -293,7 +322,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 80, "t": 250},
+                "pc": {"r": radialCoordinate2016, "t": 250},
                 "movement": "c",
                 "blipSize": blipSize
             },
@@ -302,7 +331,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 30, "t": 250},
+                "pc": {"r": radialCoordinateInner2015, "t": 250},
                 "movement": "c",
                 "blipSize": blipSize
             }
@@ -321,7 +350,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2017",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 140, "t": 340},
+                "pc": {"r": radialCoordinate2017, "t": 340},
                 "movement": "c",
                 "blipSize": blipSize
             },
@@ -330,7 +359,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 90, "t": 350},
+                "pc": {"r": radialCoordinate2016, "t": 350},
                 "movement": "c",
                 "blipSize": blipSize
             },
@@ -339,7 +368,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 90, "t": 330},
+                "pc": {"r": radialCoordinate2016, "t": 330},
                 "movement": "c",
                 "blipSize": blipSize
             },
@@ -348,7 +377,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 90, "t": 310},
+                "pc": {"r": radialCoordinate2016, "t": 310},
                 "movement": "t",
                 "blipSize": blipSize
             },
@@ -357,7 +386,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 90, "t": 290},
+                "pc": {"r": radialCoordinate2016, "t": 290},
                 "movement": "c",
                 "blipSize": blipSize
             },
@@ -366,7 +395,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 40, "t": 330},
+                "pc": {"r": radialCoordinateOuter2015, "t": 330},
                 "movement": "c",
                 "blipSize": blipSize
             },
@@ -375,7 +404,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 40, "t": 300},
+                "pc": {"r": radialCoordinateOuter2015, "t": 300},
                 "movement": "c",
                 "blipSize": blipSize
             },
@@ -384,7 +413,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": 20, "t": 300},
+                "pc": {"r": 40, "t": 300},
                 "movement": "c",
                 "blipSize": blipSize
             }
