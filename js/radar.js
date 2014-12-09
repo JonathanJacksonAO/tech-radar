@@ -22,7 +22,8 @@ function init(h, w) {
             {return "#000"}
         })
 //        .strokeStyle("#000")
-        .fillStyle("rgba(194, 205, 35,.1)") // fills the entire circle
+        .fillStyle("rgba(255, 224, 130,0.2)") // fills the entire circle
+//        .fillStyle("rgba(194, 205, 35,.1)") // fills the entire circle
         .anchor("top")
         .add(pv.Label)
         .text(function (d) {
@@ -42,7 +43,7 @@ function init(h, w) {
         .bottom(function (d) {
             return d;
         })
-        .strokeStyle("#ccc");
+        .strokeStyle("rgba(0,0,0,0.3)");
 
 //quadrant lines -- horizontal 
     radar.add(pv.Line)
@@ -52,7 +53,7 @@ function init(h, w) {
         .left(function (d) {
             return d;
         })
-        .strokeStyle("#ccc");
+        .strokeStyle("rgba(0,0,0,0.3)");
 
 
 // blips
