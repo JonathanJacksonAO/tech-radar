@@ -93,13 +93,13 @@
             </div>
         </div>
 
-
+        <!-- BLIMP DESCRIPTION -->
         <div class="col-lg-4 col-md-4 col-sm-4" ng-if="showLegend != true">
             <div class="card" style="height: 550px">
                 <div class="item-header" style="background-color: {{blimpData.color}};"><h3>{{blimpData.name}}</h3></div>
 
-                <div>
-                    <div class="card-body" style="overflow: auto;">
+                <div class=" item-content">
+                    <div class="card-body">
                         <markup markdown="{{blimpData.description}}"></markup>
                         <div class="">
                             <div class="form-group">

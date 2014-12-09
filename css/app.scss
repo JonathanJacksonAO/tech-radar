@@ -52,7 +52,13 @@ margin-bottom: 20px;
   color: white;
 }
 
+.item-content{
+  height: 410px;
+  overflow: auto;
+}
+
 .item-footer{
+  height:60px;
   position: absolute;
   bottom:0px;
   left:0px;

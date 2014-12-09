@@ -74,7 +74,7 @@ var blipSize = 200;
 
 var radar_data = [
     { "quadrant": "Techniques",
-        "guid":"aaa-aaa-aaa",
+        "guid": "aaa-aaa-aaa",
         "description": "Some interesting techniques being looked at by the CTO Team.",
         "left": 45,
         "top": 18,
@@ -83,7 +83,7 @@ var radar_data = [
         "items": [
             {
                 "name": "Microservices",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2018",
                 "description": "The term **Microservice Architecture** has sprung up over the last few years to describe a particular way of designing software applications as suites of independently deployable services. While there is no precise definition of this architectural style, there are certain common characteristics around organization around business capability, automated deployment, intelligence in the endpoints, and decentralized control of languages and data.",
                 "pc": {"r": 270, "t": 135},
@@ -92,35 +92,65 @@ var radar_data = [
             },
             {
                 "name": "Scrum Certification",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2020",
                 "description": "**Certifications in Scrum**, the leading framework for Agile software development.\n\nScrum training and certification fulfill the vision of the Agile manifesto by fostering greater collaboration, productivity, and success among team members. This global movement transforms organizations and takes them to higher levels of performance.",
                 "pc": {"r": 110, "t": 135},
                 "movement": "c",
                 "blipSize": blipSize},
             {
-                "name": "Test",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2015",
-                "description":"Description to go **here**.",
+                "name": "markdown",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2015",
+                "description": "This is a paragraph\n" +
+                    "HTML Markup Below" +
+                    "<div>" +
+                    "<span style='background-color: red;'>Here is some HTML</span>" +
+                    "</div>" +
+                    "\nThis is another paragraph\n" +
+                    "#Header 1\n" +
+                    "##Header 2\n" +
+                    "######Header 6\n" +
+                    "> This is a block quote\n\n" +
+                    "1. ordered\n" +
+                    "2. list\n" +
+                    "3. item\n\n" +
+                    "Another paragraph...\n" +
+                    "- unordered\n" +
+                    "- list\n" +
+                    "- item\n\n" +
+                    "A normal paragraph:\n\n" +
+                    "    <p>A code block</p>\n\n" +
+                    "######HORIZONTAL RULES\n\n" +
+                    "***\n\n" +
+                    "---\n\n" +
+                    "This is [an example](http://example.com/ 'Title') inline link.\n\n" +
+                    "[This link](http://example.net/) has no title attribute.\n\n" +
+                    "This is [an example] [id] reference-style link.\n\n" +
+                    "<http://example.com/>\n\n" +
+                    "<email.address@example.com>\n\n" +
+                    "   [id]:  http://example.com/  (Optional Title Here)\n\n" +
+                    "######IMAGES\n\n" +
+                    "![Ionic Image](img/ionic.png 'Optional title')\n\n"
+                ,
                 "pc": {"r": 160, "t": 140},
                 "movement": "c",
                 "blipSize": blipSize
             },
             {
                 "name": "Incremental data warehousing",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2015",
-                "description":"Description to go **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2015",
+                "description": "Description to go **here**.",
                 "pc": {"r": 180, "t": 165},
                 "movement": "c",
                 "blipSize": blipSize
             },
             {
                 "name": "DevOps",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2015",
-                "description":"**DevOps** (a portmanteau of **development** and **operations**) is a software development method that stresses communication, collaboration and integration between software developers and Information Technology(IT) professionals.  DevOps is a response to the interdependence of software development and IT operations. It aims to help an organization rapidly produce software products and services.\n\nFor more information, [click here](http://en.wikipedia.org/wiki/DevOps).",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2015",
+                "description": "**DevOps** (a portmanteau of **development** and **operations**) is a software development method that stresses communication, collaboration and integration between software developers and Information Technology(IT) professionals.  DevOps is a response to the interdependence of software development and IT operations. It aims to help an organization rapidly produce software products and services.\n\nFor more information, [click here](http://en.wikipedia.org/wiki/DevOps).",
                 "pc": {"r": 200, "t": 110},
                 "movement": "c",
                 "blipSize": blipSize
@@ -129,7 +159,7 @@ var radar_data = [
         ]
     },
     { "quadrant": "Tools",
-        "guid":"bbb-bbb-bbb",
+        "guid": "bbb-bbb-bbb",
         "description": "Some interesting _tools_ being looked at by the CTO Team.",
         "left": w - 200 + 30,
         "top": 18,
@@ -137,31 +167,31 @@ var radar_data = [
         "items": [
             {
                 "name": "ESB",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2016",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2016",
+                "description": "Description goes **here**.",
                 "pc": {"r": 80, "t": 20},
                 "movement": "t",
                 "blipSize": blipSize},
             {
                 "name": "Intentional Programming",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2016",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2016",
+                "description": "Description goes **here**.",
                 "pc": {"r": 210, "t": 10},
                 "movement": "c",
                 "blipSize": blipSize},
             {
                 "name": "Cross mobile platforms",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2016",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2016",
+                "description": "Description goes **here**.",
                 "pc": {"r": 140, "t": 70},
                 "movement": "c",
                 "blipSize": blipSize},
             {
                 "name": "Github",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2019",
                 "description": "GitHub is a Git repository web-based hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features. Unlike Git, which is strictly a command-line tool, GitHub provides a web-based graphical interface and desktop as well as mobile integration. It also provides access control and several collaboration features such as wikis, task management, and bug tracking and feature requests for every project.\n\nGitHub offers both paid plans for private repositories and free accounts, which are usually used to host open-source software projects. As of 2014, GitHub reports having over 3.4 million users,[4] making it the largest code host in the world",
                 "pc": {"r": 210, "t": 70},
@@ -169,16 +199,16 @@ var radar_data = [
                 "blipSize": blipSize},
             {
                 "name": "Restfulie",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2016",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2016",
+                "description": "Description goes **here**.",
                 "pc": {"r": 210, "t": 50},
                 "movement": "c",
                 "blipSize": blipSize}
         ]
     },
     { "quadrant": "Platforms",
-        "guid":"ccc-ccc-ccc",
+        "guid": "ccc-ccc-ccc",
         "description": "Here we cover off cloud, web and application platforms.",
         "left": 45,
         "top": (h / 2 + 18),
@@ -186,45 +216,45 @@ var radar_data = [
         "items": [
             {
                 "name": "Rich internet applications",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2017",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2017",
+                "description": "Description goes **here**.",
                 "pc": {"r": 120, "t": 200},
                 "movement": "c",
                 "blipSize": blipSize
             },
             {
                 "name": "GWT",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2017",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2017",
+                "description": "Description goes **here**.",
                 "pc": {"r": 220, "t": 210},
                 "movement": "c",
                 "blipSize": blipSize
             },
             {
                 "name": "IE8",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2017",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2017",
+                "description": "Description goes **here**.",
                 "pc": {"r": 170, "t": 240},
                 "movement": "c",
                 "blipSize": blipSize
             },
             {
                 "name": "WS-* beyond basic profile",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2017",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2017",
+                "description": "Description goes **here**.",
                 "pc": {"r": 260, "t": 230},
                 "movement": "c",
                 "blipSize": blipSize
             },
             {
                 "name": "Azure",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2017",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2017",
+                "description": "Description goes **here**.",
                 "pc": {"r": 20, "t": 240},
                 "movement": "c",
                 "blipSize": blipSize
@@ -232,7 +262,7 @@ var radar_data = [
         ]
     },
     { "quadrant": "Languages",
-        "guid":"ddd-dddd-ddd",
+        "guid": "ddd-dddd-ddd",
         "description": "Some of the languages we are looking at around web and mobile development.",
         "color": "#8BC34A", // light green
         "left": (w - 200 + 30),
@@ -240,27 +270,27 @@ var radar_data = [
         "items": [
             {
                 "name": "Java language end of life",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2018",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2018",
+                "description": "Description goes **here**.",
                 "pc": {"r": 60, "t": 340},
                 "movement": "c",
                 "blipSize": blipSize
             },
             {
                 "name": "F#",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2018",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2018",
+                "description": "Description goes **here**.",
                 "pc": {"r": 270, "t": 340},
                 "movement": "c",
                 "blipSize": blipSize
             },
             {
                 "name": "Scala",
-                "team":"Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear":"2018",
-                "description":"Description goes **here**.",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2018",
+                "description": "Description goes **here**.",
                 "pc": {"r": 220, "t": 320},
                 "movement": "c",
                 "blipSize": blipSize
