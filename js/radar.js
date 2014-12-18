@@ -22,7 +22,8 @@ function init(h, w) {
             {return "#000"}
         })
 //        .strokeStyle("#000")
-        .fillStyle("rgba(255, 224, 130,0.2)") // fills the entire circle
+            .fillStyle("rgba(189,189,189,0.2)") // fills the entire circle
+//        .fillStyle("rgba(255, 224, 130,0.2)") // fills the entire circle
 //        .fillStyle("rgba(194, 205, 35,.1)") // fills the entire circle
         .anchor("top")
         .add(pv.Label)
@@ -34,6 +35,7 @@ function init(h, w) {
         .textBaseline("top") // label position in relation to arc line
         .textStyle("rgba(0,0,0,1.0)"); // label colour
 //        .textStyle("#F44336"); // label colour
+
 
 //quadrant lines -- vertical
     radar.add(pv.Line)
@@ -79,12 +81,12 @@ function init(h, w) {
             })
             .left(function (d) {
                 var x = polar_to_raster(d.pc.r, d.pc.t)[0];
-                console.log("name:" + d.name + ", x:" + x);
+//                console.log("name:" + d.name + ", x:" + x);
                 return x;
             })
             .bottom(function (d) {
                 var y = polar_to_raster(d.pc.r, d.pc.t)[1];
-                console.log("name:" + d.name + ", y:" + y);
+//                console.log("name:" + d.name + ", y:" + y);
                 return y;
             })
             .title(function (d) {
@@ -104,10 +106,38 @@ function init(h, w) {
             })
 //            .event("mouseover",pv.Behavior.tipsy({"gravity": "sw",fade:true}))
             .angle(Math.PI)  // 180 degrees in radians !
-            .strokeStyle(radar_data[i].color)
+            .lineWidth(4) // width od the stroke
+            .strokeStyle(function(d){
+                if(d.movement == "d"){
+//                    return "rgb(67,160,71)"; // Green
+                    return d.color
+
+                }
+                else if(d.movement == "s"){
+//                    return "rgb(239,83,80)"; // Red
+                    return d.color
+
+                }
+                else {
+                    return d.color
+                }
+            })
+//            .strokeStyle(radar_data[i].color)
             .fillStyle(radar_data[i].color)
             .shape(function (d) {
-                return (d.movement === 't' ? "triangle" : "circle"); // can be any shape e.g square, diamond
+                //return (d.movement === 't' ? "triangle" : "circle"); // can be any shape e.g square, diamond
+                if(d.movement === "t"){
+                    return "triangle";
+                }
+                else if(d.movement === "c") {
+                    return "circle";
+                }
+                else if(d.movement === "s"){
+                    return "square";
+                }
+                else{
+                    return "diamond";
+                }
             })
             .anchor("center")
             .add(pv.Label)
@@ -118,6 +148,45 @@ function init(h, w) {
             .textBaseline("middle")
             .textStyle("white");
     }
+
+    // Quadrant Ledgends
+    _.forEach(radar_data, function(quadrant){
+    console.log("Quad",quadrant); // todo: delete me
+
+//        radar.add(pv.Label)
+//            .left(quadrant.left)
+//            .top(quadrant.top)
+//            .text(quadrant.quadrant)
+//            .font("18px sans-serif")
+//        ;
+
+        radar.add(pv.Dot)
+//            .left(quadrant.left)
+//            .top(quadrant.top)
+            .left(function () {
+                var x = polar_to_raster(quadrant.r, quadrant.t)[0];
+//                console.log("name:" + d.name + ", x:" + x);
+                return x;
+            })
+            .bottom(function () {
+                var y = polar_to_raster(quadrant.r, quadrant.t)[1];
+//                console.log("name:" + d.name + ", y:" + y);
+                return y;
+            })
+            .strokeStyle("rgba(255,255,255,0)")
+            .fillStyle("rgba(255,255,255,0)")
+            .shape("circle")
+            .anchor("center")
+            .add(pv.Label)
+            .text(function(){
+                return quadrant.quadrant;
+            })
+            .textAngle(quadrant.textAngle)
+            .font("16px sans-serif")
+        ;
+
+    });
+
 
 
 //Quadrant Ledgends

@@ -99,7 +99,18 @@ var radialCoordinateOuter2015 = 70;
 var radialCoordinate2016 = 120;
 var radialCoordinate2017 = 160;
 var radialCoordinate2018 = 210;
+var radialCoordinate2019 = 255;
 var radialCoordinate2020 = 300;
+var radialCoordinateLabel = 350;
+
+var quadrantLabelAdjustment = 10;
+
+// note: movement
+// n = circle with green border - assess - added since last publication.
+// c = circle - feel strongly that we should adopt technology - no movement since last publication date
+// t = triangle - feel strongly that we should adopt technology  moved since last publication date
+// h = circle with red border - hold - consider removing by next publication
+
 
 var radar_data = [
     { "quadrant": "Services/Applications",
@@ -107,8 +118,12 @@ var radar_data = [
         "description": "Some interesting techniques being looked at by the CTO Team.",
         "left": 45,
         "top": 18,
+        "r":radialCoordinateLabel,
+        "t":135,
+        "textAngle":(-0.90),
+        "textAngle":(- Math.PI / 4),
 //        "color" : "#8FA227",
-        "color": "#FF5722", //colour for blimps for this specific quadrant
+        "color": "rgb(251,140,0)", // orange
         "items": [
             {
                 "name": "Finance (SaaS)",
@@ -164,7 +179,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": radialCoordinate2016, "t": 110},
+                "pc": {"r": radialCoordinate2016 + 5, "t": 105},
                 "movement": "c",
                 "blipSize": blipSize
             }
@@ -174,8 +189,8 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": radialCoordinate2016, "t": 130},
-                "movement": "t",
+                "pc": {"r": radialCoordinate2016 - 15, "t": 115},
+                "movement": "c",
                 "blipSize": blipSize
             }
             ,
@@ -184,7 +199,7 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": radialCoordinate2016, "t": 150},
+                "pc": {"r": radialCoordinate2016 + 5, "t": 125},
                 "movement": "c",
                 "blipSize": blipSize
             }
@@ -194,7 +209,77 @@ var radar_data = [
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": radialCoordinate2016, "t": 170},
+                "pc": {"r": radialCoordinate2016 - 15, "t": 135},
+                "movement": "c",
+                "blipSize": blipSize
+            }
+            ,
+            {
+                "name": "Legacy Application Delivery as a Service",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2016",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinate2016 + 5, "t": 145},
+                "movement": "c",
+                "blipSize": blipSize
+            }
+            ,
+            {
+                "name": "Machine Translation as a Service",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2016",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinate2016 - 15, "t": 155},
+                "movement": "c",
+                "blipSize": blipSize
+            }
+            ,
+            {
+                "name": "User Behaviour and Business Transaction Monitoring",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2016",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinate2016 + 5, "t": 165},
+                "movement": "c",
+                "blipSize": blipSize
+            }
+            ,
+            {
+                "name": "External Integration Services",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2015",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinateOuter2015, "t": 150},
+                "movement": "c",
+                "blipSize": blipSize
+            }
+            ,
+            {
+                "name": "Information visualisation",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2015",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinateOuter2015, "t": 120},
+                "movement": "c",
+                "blipSize": blipSize
+            }
+            ,
+            {
+                "name": "ICE",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2015",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinateInner2015, "t": 120},
+                "movement": "c",
+                "blipSize": blipSize
+            }
+            ,
+            {
+                "name": "Crowdsourcing",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2015",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinateInner2015, "t": 150},
                 "movement": "c",
                 "blipSize": blipSize
             }
@@ -205,8 +290,19 @@ var radar_data = [
         "description": "Some interesting _tools_ being looked at by the CTO Team.",
         "left": w - 200 + 30,
         "top": 18,
-        "color": "#3F51B5", // indigo
+        "r":radialCoordinateLabel,
+        "t":"45",
+        "textAngle":(Math.PI / 4),
+        "color": "rgb(3,169,244)", // blue
         "items": [
+            {
+                "name": "Internet of Things",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2019",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinate2019, "t": 60},
+                "movement": "c",
+                "blipSize": blipSize},
             {
                 "name": "Biometric Authentication",
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
@@ -278,7 +374,7 @@ var radar_data = [
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
                 "pc": {"r": radialCoordinateInner2015 - 30, "t": 50},
                 "movement": "c",
-                "blipSize": blipSize},
+                "blipSize": blipSize}
 
 
         ]
@@ -288,7 +384,10 @@ var radar_data = [
         "description": "Here we cover off cloud, web and application platforms.",
         "left": 45,
         "top": (h / 2 + 18),
-        "color": "#673AB7", // deep purple
+        "r":radialCoordinateLabel,
+        "t":"225",
+        "textAngle":(Math.PI / 4),
+        "color": "rgb(126,87,194)", // purple
         "items": [
             {
                 "name": "5G",
@@ -306,6 +405,15 @@ var radar_data = [
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
                 "pc": {"r": radialCoordinate2020, "t": 250},
                 "movement": "t",
+                "blipSize": blipSize
+            },
+            {
+                "name": "SDN",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2017",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinate2017, "t": 210},
+                "movement": "c",
                 "blipSize": blipSize
             },
             {
@@ -327,7 +435,34 @@ var radar_data = [
                 "blipSize": blipSize
             },
             {
+                "name": "Hotspots 2.0",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2016",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinate2016, "t": 250},
+                "movement": "c",
+                "blipSize": blipSize
+            },
+            {
+                "name": "iBeacon",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2016",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinate2016, "t": 250},
+                "movement": "c",
+                "blipSize": blipSize
+            },
+            {
                 "name": "Adopt 802.11ac",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2015",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinateOuter2015, "t": 220},
+                "movement": "c",
+                "blipSize": blipSize
+            },
+            {
+                "name": "Global web acceleration/optimisation",
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
@@ -341,10 +476,24 @@ var radar_data = [
     { "quadrant": "Infrastructure",
         "guid": "ddd-dddd-ddd",
         "description": "Some of the languages we are looking at around web and mobile development.",
-        "color": "#8BC34A", // light green
+        "color": "rgb(0,150,136)", // light green
+//        "color": "#8BC34A", // light green
         "left": (w - 200 + 30),
         "top": (h / 2 + 18),
+        "r":radialCoordinateLabel,
+        "t":"315",
+        "textAngle":(- Math.PI / 4),
         "items": [
+            {
+                "name": "Datacenter consolidation",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2019",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinate2019, "t": 340},
+                "movement": "c",
+                "blipSize": blipSize
+            }
+            ,
             {
                 "name": "Global Managed Print Service",
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
@@ -353,7 +502,8 @@ var radar_data = [
                 "pc": {"r": radialCoordinate2017, "t": 340},
                 "movement": "c",
                 "blipSize": blipSize
-            },
+            }
+            ,
             {
                 "name": "CTE/PROD Merged",
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
@@ -414,6 +564,16 @@ var radar_data = [
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
                 "pc": {"r": 40, "t": 300},
+                "movement": "c",
+                "blipSize": blipSize
+            }
+            ,
+            {
+                "name": "CYODesktop",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2015",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": 40, "t": 330},
                 "movement": "c",
                 "blipSize": blipSize
             }
