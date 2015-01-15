@@ -134,6 +134,7 @@ var radar_data = [
                 "movement": "c",
                 "blipSize": blipSize
             },
+
             {
                 "name": "HRM (SaaS)",
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
@@ -157,9 +158,9 @@ var radar_data = [
             {
                 "name": "Office 365",
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear": "2017",
+                "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": radialCoordinate2017, "t": 140},
+                "pc": {"r": radialCoordinateOuter2015, "t": 170},
                 "movement": "c",
                 "blipSize": blipSize
             }
