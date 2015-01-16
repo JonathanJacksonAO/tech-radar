@@ -246,6 +246,16 @@ var radar_data = [
             }
             ,
             {
+                "name": "Docker",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2016",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinate2016 - 15, "t": 173},
+                "movement": "c",
+                "blipSize": blipSize
+            }
+            ,
+            {
                 "name": "External Integration Services",
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
@@ -256,7 +266,7 @@ var radar_data = [
             }
             ,
             {
-                "name": "Information visualisation",
+                "name": "Information Visualisation",
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
                 "targetYear": "2015",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
