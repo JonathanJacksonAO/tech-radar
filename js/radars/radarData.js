@@ -128,9 +128,18 @@ var radar_data = [
             {
                 "name": "Finance (SaaS)",
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear": "2020",
+                "targetYear": "2019",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": radialCoordinate2020, "t": 135},
+                "pc": {"r": radialCoordinate2019, "t": 135},
+                "movement": "c",
+                "blipSize": blipSize
+            },
+            {
+                "name": "Customer Relationship Management (CRM) (SaaS)",
+                "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
+                "targetYear": "2019",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
+                "pc": {"r": radialCoordinate2019, "t": 155},
                 "movement": "c",
                 "blipSize": blipSize
             },
@@ -366,9 +375,9 @@ var radar_data = [
             {
                 "name": "Big Data Analytics",
                 "team": "Technical Authority; Technical Lead; Project Manager; Business Analyst; Application Developer",
-                "targetYear": "2015",
+                "targetYear": "2016",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.",
-                "pc": {"r": radialCoordinateInner2015, "t": 70},
+                "pc": {"r": radialCoordinate2016, "t": 70},
                 "movement": "c",
                 "blipSize": blipSize},
             {
